@@ -1,9 +1,9 @@
 package entities;
 
 public class Product {
-    public String name;
-    public double price;
-    public int quantity;
+    private String name;
+    private double price;
+    private int quantity;
 
     //constructor default
     public Product() {
@@ -20,6 +20,36 @@ public class Product {
     public Product(String name, double price) {
         this.name = name;
         this.price = price;
+    }
+
+    /*
+     * Encapsulamento em Java é o conceito de ocultar os detalhes de implementação de uma classe,
+     * tornando seus atributos privados e fornecendo métodos públicos para acessá-los e modificá-los(setters e getters).
+     * Isso promove segurança, controle, flexibilidade e abstração, permitindo que os objetos da classe sejam
+     * utilizados por meio de uma interface pública, enquanto os detalhes internos da implementação são mantidos ocultos
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    /* A quantidade de produtos só poderá ser alterada através dos métodos addProducts e removeProducts.
+     * Dessa forma, para quantity não haverá o método setQuantity, para proteger o objeto Product de alteracoes
+     * inconsistentes de quantiadde
+     * */
+    public int getQuantity() {
+        return quantity;
     }
 
     public double totalValueInStock() {
