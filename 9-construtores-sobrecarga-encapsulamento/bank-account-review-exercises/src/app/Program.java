@@ -29,7 +29,6 @@ public class Program {
             userBankAcc = new BankAccount(number, holder, initialDeposit);
         } else {
             userBankAcc = new BankAccount(number, holder);
-
         }
 
         System.out.println();
@@ -50,8 +49,6 @@ public class Program {
         System.out.println("Updated account data:");
         System.out.println(userBankAcc);
 
-
         sc.close();
-
     }
 }
