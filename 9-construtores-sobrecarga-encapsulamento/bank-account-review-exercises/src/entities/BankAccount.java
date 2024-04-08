@@ -1,4 +1,4 @@
-package app.entities;
+package entities;
 
 public class BankAccount {
     private final int accountNumber;
