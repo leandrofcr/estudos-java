@@ -19,14 +19,14 @@ public class Program {
 
         System.out.print("Is there a initial deposit (y/n)? ");
         char hasInitialBalance = sc.next().charAt(0);
-        double balance;
+        double initialDeposit;
 
         BankAccount userBankAcc;
 
         if (hasInitialBalance == 'y') {
             System.out.print("Enter initial deposit value: ");
-            balance = sc.nextDouble();
-            userBankAcc = new BankAccount(number, holder, balance);
+            initialDeposit = sc.nextDouble();
+            userBankAcc = new BankAccount(number, holder, initialDeposit);
         } else {
             userBankAcc = new BankAccount(number, holder);
 
