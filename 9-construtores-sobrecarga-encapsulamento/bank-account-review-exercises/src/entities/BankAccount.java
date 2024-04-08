@@ -1,42 +1,42 @@
 package entities;
 
 public class BankAccount {
-    private final int accountNumber;
-    private String accountHolder;
+    private final int number;
+    private String holder;
     private double balance;
 
-    public BankAccount(int accountNumber, String accountHolder) {
-        this.accountNumber = accountNumber;
-        this.accountHolder = accountHolder;
+    public BankAccount(int number, String holder) {
+        this.number = number;
+        this.holder = holder;
     }
 
-    public BankAccount(int accountNumber, String accountHolder, double balance) {
-        this.accountNumber = accountNumber;
-        this.accountHolder = accountHolder;
+    public BankAccount(int number, String holder, double balance) {
+        this.number = number;
+        this.holder = holder;
         this.balance = balance;
     }
 
     public int getAccountNumber() {
-        return accountNumber;
+        return number;
     }
 
     public String getAccountHolder() {
-        return accountHolder;
+        return holder;
     }
 
     public double getBalance() {
         return balance;
     }
 
-    public void setAccountHolder(String accountHolder) {
-        this.accountHolder = accountHolder;
+    public void setAccountHolder(String holder) {
+        this.holder = holder;
     }
 
     public String toString() {
         return "Account "
-                + accountNumber
+                + number
                 + ", Holder: "
-                + accountHolder
+                + holder
                 + ", Balance: "
                 + String.format("$ %.2f%n", balance);
     }

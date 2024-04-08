@@ -11,11 +11,11 @@ public class Program {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter account number: ");
-        int accountNumber = sc.nextInt();
+        int number = sc.nextInt();
         sc.nextLine();
 
         System.out.print("Enter account holder: ");
-        String accountHolder = sc.nextLine();
+        String holder = sc.nextLine();
 
         System.out.print("Is there a initial deposit (y/n)? ");
         char hasInitialBalance = sc.next().charAt(0);
@@ -26,9 +26,9 @@ public class Program {
         if (hasInitialBalance == 'y') {
             System.out.print("Enter initial deposit value: ");
             balance = sc.nextDouble();
-            userBankAcc = new BankAccount(accountNumber, accountHolder, balance);
+            userBankAcc = new BankAccount(number, holder, balance);
         } else {
-            userBankAcc = new BankAccount(accountNumber, accountHolder);
+            userBankAcc = new BankAccount(number, holder);
 
         }
 
