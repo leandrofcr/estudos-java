@@ -19,7 +19,7 @@ public class Program {
 
         System.out.print("Is there a initial deposit (y/n)? ");
         char hasInitialBalance = sc.next().charAt(0);
-        double balance = 0;
+        double balance;
 
         BankAccount userBankAcc;
 
