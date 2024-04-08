@@ -16,11 +16,12 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public int getAccountNumber() {
+
+    public int getNumber() {
         return number;
     }
 
-    public String getAccountHolder() {
+    public String getHolder() {
         return holder;
     }
 
@@ -28,7 +29,7 @@ public class BankAccount {
         return balance;
     }
 
-    public void setAccountHolder(String holder) {
+    public void setHolder(String holder) {
         this.holder = holder;
     }
 
