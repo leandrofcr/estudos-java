@@ -16,7 +16,6 @@ public class BankAccount {
         deposit(initialDeposit);
     }
 
-
     public int getNumber() {
         return number;
     }
