@@ -5,6 +5,8 @@ O curso aborda conceitos como:
 
 - Lógica de programação e algoritmos;
 - Sintaxe da linguagem Java;
+- Alocação de memória e ponteiros;
+- Heap, Stack e Garbage Collector;
 - Classes, atributos e métodos;
 - Construtores, sobrecarga, encapsulamento;
 - Estruturas de dados: arrays e coleções;
@@ -12,6 +14,8 @@ O curso aborda conceitos como:
 - Herança, polimorfismo, interfaces;
 - Tratamento de exceções;
 - Generics;
+- Manipulação de arquivos;
+- Web services
 - Programação funcional e expressões lambda, Stream API;
 - Manipulação de arquivos;
 
