@@ -14,9 +14,10 @@ public class Program {
         int numberOfGuest = sc.nextInt();
 
         for (int i = 0; i < numberOfGuest; i++) {
+            System.out.println();
             System.out.printf("Rent #%s%n ", i + 1);
-            sc.nextLine();
             System.out.print("Name: ");
+            sc.nextLine();
             String name = sc.nextLine();
             System.out.print("Email: ");
             String email = sc.nextLine();
@@ -25,6 +26,7 @@ public class Program {
             guests[room] = new Guest(name, email, room);
         }
 
+        System.out.println();
         System.out.println("Busy rooms:");
 
         for (Guest guest : guests) {
