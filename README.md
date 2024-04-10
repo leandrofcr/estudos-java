@@ -1,5 +1,5 @@
 
-### Repository with exercises regarding the Java course - Object-Oriented Programming + Projects
+### Repository with exercises regarding the Java course - Object-Oriented Programming
 ##### The course covers concepts such as:
 
 - Programming logic and algorithms;
