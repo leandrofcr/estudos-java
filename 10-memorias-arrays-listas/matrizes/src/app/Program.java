@@ -15,7 +15,7 @@ public class Program {
         // quantidade de colunas -> mat[i].length
 
         for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; mat[i].length < n; j++) {
+            for (int j = 0; j < mat[i].length; j++) {
                 mat[i][j] = sc.nextInt();
             }
         }
