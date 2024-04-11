@@ -16,7 +16,7 @@ public class Program {
         int[][] mat = new int[rows][columns];
 
         for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; mat[i].length < n; j++) {
+            for (int j = 0;  < n; j++) {
                 mat[i][j] = sc.nextInt();
             }
         }
