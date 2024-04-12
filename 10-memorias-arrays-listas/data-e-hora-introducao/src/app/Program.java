@@ -79,6 +79,43 @@ public class Program {
         DateTimeFormatter fmt7 = DateTimeFormatter.ISO_INSTANT;
         System.out.println("Formato customizado com ISO_INSTANT: " + fmt7.format(d06));
 
+        System.out.println();
+        System.out.println("######################################################");
+        System.out.println();
+
+        // CONVERTENDO DATA-HORA GLOBAL PARA LOCAL
+
+        LocalDate dateLocal1 = LocalDate.parse("2024-04-11");
+        LocalDateTime dateTime1 = LocalDateTime.parse("2024-04-11T01:30:26");
+        Instant dateInstant1 = Instant.parse("2024-04-11T01:30:26Z");
+
+        LocalDate r1 = LocalDate.ofInstant(dateInstant1, ZoneId.systemDefault());
+        LocalDate r2 = LocalDate.ofInstant(dateInstant1, ZoneId.of("Portugal"));
+        LocalDateTime r3 = LocalDateTime.ofInstant(dateInstant1, ZoneId.systemDefault());
+        LocalDateTime r4 = LocalDateTime.ofInstant(dateInstant1, ZoneId.of("Portugal"));
+
+        System.out.println("r1 = " + r1);
+        System.out.println("r2 = " + r2);
+        System.out.println("r3 = " + r3);
+        System.out.println("r4 = " + r4);
+
+
+        System.out.println();
+        System.out.println("######################################################");
+        System.out.println();
+
+        // OBTER DADOS DE DATA-HORA LOCAL (dia, mes, ano , horario)
+
+        System.out.println("dateLocal1 dia  = " + dateLocal1.getDayOfMonth());
+        System.out.println("dateLocal1 mes  = " + dateLocal1.getMonthValue());
+        System.out.println("dateLocal1 mes  = " + dateLocal1.getMonth());
+        System.out.println("dateLocal1 ano  = " + dateLocal1.getYear());
+
+        System.out.println();
+        System.out.println("dateTime1 hora  = " + dateTime1.getHour());
+        System.out.println("dateTime1 hora  = " + dateTime1.getMinute());
+        System.out.println("dateTime1 hora  = " + dateTime1.getSecond());
+
 
     }
 }
