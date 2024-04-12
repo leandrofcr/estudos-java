@@ -3,6 +3,7 @@ package app;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public class Program {
@@ -52,5 +53,32 @@ public class Program {
 
         System.out.println("LocalDate.of: " + d10); // 2024-04-11
         System.out.println("LocalDateTime.of: " + d11); //2024-04-11T01:30
+        System.out.println("------------------");
+
+        // Convertendo Data-hora para texto
+
+        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // -> Date  Local
+        DateTimeFormatter fmt4 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"); // -> Date time local
+        DateTimeFormatter fmt5 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault()); // Instand. ZoneId.systemDefault() -> retorna o fuso horario da maquina local
+
+        System.out.println("Sem formatacao: " + d04);
+        System.out.println("Formato customizado: " + d04.format(fmt3));
+        System.out.println("Formato customizado: " + fmt3.format(d04));
+
+        System.out.println("------------------");
+        System.out.println("Sem formatacao: " + d05);
+        System.out.println("Formato customizado: " + d05.format(fmt4));
+
+        System.out.println("------------------");
+        System.out.println("Sem formatacao: " + d06);
+        System.out.println("Formato customizado: " + fmt5.format(d06));
+
+        System.out.println("------------------");
+        DateTimeFormatter fmt6 = DateTimeFormatter.ISO_DATE_TIME;
+        System.out.println("Formato customizado com ISO_DATE_TIME: " + d05.format(fmt6));
+        DateTimeFormatter fmt7 = DateTimeFormatter.ISO_INSTANT;
+        System.out.println("Formato customizado com ISO_INSTANT: " + fmt7.format(d06));
+
+
     }
 }
