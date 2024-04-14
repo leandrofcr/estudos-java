@@ -13,7 +13,7 @@ public class Worker {
 
     // composicao de objetos:
     private Department department;
-    private List<HourContract> contracts = new ArrayList<>();
+    private final List<HourContract> contracts = new ArrayList<>();
 
     public Worker() {
     }

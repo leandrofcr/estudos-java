@@ -33,7 +33,6 @@ public class Program {
         System.out.print("How many contracts to this worker?  ");
         int n = sc.nextInt();
 
-
         for (int i = 1; i <= n; i++) {
             System.out.printf("Enter contract #" + i + " data: ");
             System.out.print("Date (DD/MM/YYYY): ");
