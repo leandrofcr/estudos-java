@@ -32,7 +32,6 @@ public class Program {
 
         Order order = new Order(new Date(), orderStatus, new Customer(name, email, birthDate));
 
-
         for (int i = 1; i <= numberOfItems; i++) {
             System.out.printf("Enter #%s%n item data: ", i);
             System.out.print("Product name: ");
@@ -42,9 +41,8 @@ public class Program {
             System.out.print("Quantity: ");
             int quantity = sc.nextInt();
             sc.nextLine();
-            double orderPrice = productPrice * quantity;
 
-            OrderItem item = new OrderItem(quantity, orderPrice, new Product(productName, productPrice));
+            OrderItem item = new OrderItem(quantity, productPrice, new Product(productName, productPrice));
 
             order.addItem(item);
         }

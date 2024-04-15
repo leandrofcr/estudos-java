@@ -59,15 +59,11 @@ public class Order {
 
         sb.append("Order moment: ").append(sdfWithHour.format(moment)).append("\n");
         sb.append("Order status: ").append(status).append("\n");
-        sb.append("Customer: ").append(customer.getName()).append(" ");
-        sb.append("(").append(sdf.format(customer.getBirthDate())).append(") - ").append(customer.getEmail()).append("\n");
+        sb.append(getCustomer()).append("\n");
         sb.append("Order items:").append("\n");
 
         for (OrderItem item : items) {
-            sb.append(item.getProduct().getName()).append(", $");
-            sb.append(formatCurrency(item.getProduct().getPrice())).append(", ");
-            sb.append("Quantity: ").append(item.getQuantity()).append(", $");
-            sb.append(formatCurrency(item.subTotal())).append("\n");
+            sb.append(item).append("\n");
         }
         sb.append("Total price: $").append(formatCurrency(total()));
 

@@ -1,12 +1,14 @@
 package entities.enums;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Customer {
+    public static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
     private String name;
     private String email;
     private Date birthDate;
-
 
     public Customer(String name, String email) {
         this.name = name;
@@ -41,5 +43,10 @@ public class Customer {
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer: " + name + "(" + sdf.format(birthDate) + ") " + " - " + email;
     }
 }

@@ -6,6 +6,7 @@ import java.util.List;
 public class OrderItem {
     private Integer quantity;
     private Double price;
+
     private Product product;
 
     public OrderItem(Integer quantity, Double price, Product product) {
@@ -40,5 +41,16 @@ public class OrderItem {
 
     public double subTotal() {
         return this.quantity * product.getPrice();
+    }
+
+    @Override
+    public String toString() {
+        return getProduct().getName()
+                + ", $"
+                + String.format("%.2f", getProduct().getPrice())
+                + ", Quantity: "
+                + quantity
+                + ", Subtotal: $"
+                + String.format("%.2f", subTotal());
     }
 }
