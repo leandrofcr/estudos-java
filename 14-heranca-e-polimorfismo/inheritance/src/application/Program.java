@@ -25,9 +25,9 @@ public class Program {
         // acc5.loan(200.);  --> isso lancaria um erro pois a variável acc3 não é do tipo business account e não possui o metodo loan
 
         /* a condicao dos ifs abaixo sempre será mesma devido a forma como as variaveis foram definas
-        * Entretando, em um caso onde acc3 é uma varial que pode vir de outro servico o método instanceof pode se usado
-        * para verificar a que classe esta instancia pertence, e a partir disso executar a acao correta
-        */
+         * Entretando, em um caso onde acc3 é uma varial que pode vir de outro servico o método instanceof pode se usado
+         * para verificar a que classe esta instancia pertence, e a partir disso executar a acao correta
+         */
 
         if (acc3 instanceof BusinessAccount) {
             BusinessAccount acc5 = (BusinessAccount) acc3;
@@ -35,10 +35,18 @@ public class Program {
             System.out.println("Loan");
         }
 
-        if(acc3 instanceof  SavingsAccount){
+        if (acc3 instanceof SavingsAccount) {
             SavingsAccount acc5 = (SavingsAccount) acc3;
             acc5.updateBalance();
             System.out.println("Update");
         }
+
+        Account acc6 = new Account(1005, "Alex", 1000.0);
+        acc6.withdrawal(200.0);
+        System.out.println(acc6.getBalance());
+
+        Account acc7 = new SavingsAccount(1006, "Bob", 1000.0, 0.01);
+        acc7.withdrawal(200.0);
+        System.out.println(acc7.getBalance());
     }
 }
