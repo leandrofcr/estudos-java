@@ -3,7 +3,7 @@ package entities;
 public class Account {
     private Integer number;
     private String holder;
-    protected Double balance; //o modificador protected permite que o parametro seja acessado por uma sub classe
+    protected Double balance; //o modificador protected permite que o parametro seja acessado por uma subclasse
 
     public Account() {
     }

@@ -8,7 +8,7 @@ public class BusinessAccount extends Account {
     }
 
     public BusinessAccount(Integer number, String holder, Double balance, Double loanLimit) {
-        super(number, holder, balance); //executa a lógica do constructor da class base ou super class (Account)
+        super(number, holder, balance); //executa a lógica do constructor da class base ou superclass (Account)
         this.loanLimit = loanLimit;
     }
 
