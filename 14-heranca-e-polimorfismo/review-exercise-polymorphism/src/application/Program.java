@@ -38,8 +38,8 @@ public class Program {
             System.out.println();
         }
 
-        for (Employee e : employees) {
-            System.out.println(e);
+        for (Employee emp : employees) {
+            System.out.println(emp);
         }
         sc.close();
 
