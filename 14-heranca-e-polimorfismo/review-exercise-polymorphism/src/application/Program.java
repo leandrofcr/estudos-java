@@ -42,6 +42,5 @@ public class Program {
             System.out.println(emp);
         }
         sc.close();
-
     }
 }
