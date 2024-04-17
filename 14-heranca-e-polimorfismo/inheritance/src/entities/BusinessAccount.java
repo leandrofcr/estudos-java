@@ -27,7 +27,7 @@ public class BusinessAccount extends Account {
     }
 
     @Override
-    public void withdrawal(double amount) {
+    public final void withdrawal(double amount) {
         super.withdrawal(amount); // realiza o method da super class e depis desconta mais 2.0
         balance -= 2.0;
     }
