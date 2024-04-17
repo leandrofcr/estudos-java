@@ -2,8 +2,8 @@ package application;
 
 public class Employee {
     private String name;
-    protected Integer hours;
-    protected Double valuePerHour;
+    private Integer hours;
+    private Double valuePerHour;
 
     public Employee() {
     }
