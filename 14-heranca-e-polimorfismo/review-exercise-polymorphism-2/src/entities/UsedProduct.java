@@ -27,7 +27,7 @@ public class UsedProduct extends Product {
     public String priceTag() {
         return name
                 + " (used) $ "
-                + price
+                + df.format(price)
                 + " (Manufacture date: "
                 + sdf.format(manufactureDate)
                 + ")";

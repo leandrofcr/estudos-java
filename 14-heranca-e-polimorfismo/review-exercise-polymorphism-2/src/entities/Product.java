@@ -1,6 +1,10 @@
 package entities;
 
+import java.text.DecimalFormat;
+
 public class Product {
+    protected DecimalFormat df = new DecimalFormat("#.00");
+
     protected String name;
     protected Double price;
 
@@ -30,6 +34,6 @@ public class Product {
     }
 
     public String priceTag(){
-        return name + " $ " + price;
+        return name + " $ " + df.format(price);
     }
 }
