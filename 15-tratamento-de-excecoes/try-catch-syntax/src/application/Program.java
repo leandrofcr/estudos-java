@@ -6,6 +6,18 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args) {
 
+        method1();
+        System.out.println("End");
+    }
+
+    public static void method1() {
+        System.out.println("*** METHOD 1 STAR ***");
+        method2();
+        System.out.println("*** METHOD 1 STAR ***");
+    }
+
+    public static void method2() {
+        System.out.println("*** METHOD 2 START ***");
         Scanner sc = new Scanner(System.in);
         try {
             String[] vect = sc.nextLine().split(" ");
@@ -13,11 +25,13 @@ public class Program {
             System.out.println(vect[position]);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Invalid position");
+            e.printStackTrace(); // -> para fins de debug
+
         } catch (InputMismatchException e) {
             System.out.println("Input error");
         }
 
-        System.out.println("End");
         sc.close();
+        System.out.println("*** METHOD 2 END ***");
     }
 }
