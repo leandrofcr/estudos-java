@@ -50,11 +50,11 @@ public class Account {
 
     public void withdrawal(Double amount) {
 
-        if (amount > withdrawalLimit) {
+        if (amount > getWithdrawalLimit()) {
             throw new IllegalArgumentException("Amount exceeds withdrawal limit");
         }
 
-        if (amount > balance) {
+        if (amount > getBalance()) {
             throw new IllegalArgumentException("Amount exceeds available balance");
         }
         this.balance -= amount;
