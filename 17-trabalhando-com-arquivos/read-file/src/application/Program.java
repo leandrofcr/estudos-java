@@ -9,6 +9,8 @@ import java.io.IOException;
 public class Program {
     public static void main(String[] args) {
 
+        // #Lendo arquivos com Scanner
+
 //        File file = new File("./example-text.txt");
 //        try (Scanner sc = new Scanner(file)) {
 //            while (sc.hasNextLine()) {
@@ -18,14 +20,11 @@ public class Program {
 //            System.out.println("Error: " + e.getMessage());
 //        }
 
+        //  #Lendo arquivos com FileReader e BufferedReader
+
         String path = "./example-text.txt";
-        FileReader fr = null;
-        BufferedReader br = null;
 
-        try {
-            fr = new FileReader(path);
-            br = new BufferedReader(fr);
-
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line = br.readLine();
 
             while (line != null) {
@@ -35,19 +34,6 @@ public class Program {
 
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
-        } finally {
-            try {
-                if (br != null) {
-                    br.close();
-                }
-                if (fr != null) {
-                    fr.close();
-                }
-
-            } catch (IOException e) {
-                System.out.println();
-            }
         }
-
     }
 }
