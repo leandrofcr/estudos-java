@@ -1,7 +1,8 @@
 package model.entities;
 
 public class Vehicle {
-    String model;
+
+    private String model;
 
     public Vehicle() {
     }

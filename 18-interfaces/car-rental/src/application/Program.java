@@ -1,19 +1,24 @@
 package application;
 
+import java.text.ParseException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
+
 import model.entities.CarRental;
 import model.entities.Vehicle;
 import model.services.BrazilTaxService;
 import model.services.RentalService;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
-import java.util.Scanner;
-
 public class Program {
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws ParseException {
+
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
         System.out.println("Enter rental data ");
@@ -24,22 +29,22 @@ public class Program {
         System.out.print("Return (dd/MM/yyyy hh:ss): ");
         LocalDateTime finish = LocalDateTime.parse(sc.nextLine(), fmt);
 
-        CarRental carRental = new CarRental(start, finish, new Vehicle(carModel));
+        CarRental cr = new CarRental(start, finish, new Vehicle(carModel));
 
         System.out.print("Enter price per hour: ");
         double pricePerHour = sc.nextDouble();
         System.out.print("Enter price per day: ");
         double pricePerDay = sc.nextDouble();
 
-        RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());
+        RentalService rentalService = new RentalService(pricePerDay, pricePerHour, new BrazilTaxService());
 
-        rentalService.processInvoice(carRental);
+        rentalService.processInvoice(cr);
 
         System.out.println();
         System.out.println("INVOICE");
-        System.out.println("Basic payment: "  + carRental.getInvoice().getBasicPayment() );
-        System.out.println("Tax: " + carRental.getInvoice().getTax());
-        System.out.println("Total payment: " + carRental.getInvoice().getTotalPayment());
+        System.out.println("Basic payment: " + cr.getInvoice().getBasicPayment());
+        System.out.println("Tax: " + cr.getInvoice().getTax());
+        System.out.println("Total payment: " + cr.getInvoice().getTotalPayment());
 
         sc.close();
     }
